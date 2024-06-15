@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #8bcee4; /* Azul claro */
+    margin: 0;
+}
+
+.envelope {
+    width: 90%; /* Ajusta el tamaño al 90% del ancho de la pantalla */
+    max-width: 600px; /* Máximo ancho de 600px */
+    height: auto;
+    background-color: #dba3d8; /* Rosa más intenso */
+    border: 1px solid #e32020; /* Rosa oscuro/rojo claro */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+    cursor: pointer;
+}
+
+.letter {
+    width: 100%;
+    padding: 20px;
+    background-color: #fafafa; /* Blanco */
+    color: #e91616; /* Rosa oscuro/rojo claro */
+    text-align: justify;
+    line-height: 1.6;
+    position: relative; /* Necesario para posicionar la curva */
+    overflow: hidden; /* Oculta la parte de la curva que sobresale */
+}
+
+.curve {
+    position: absolute;
+    bottom: -20px; /* Posición de la curva */
+    left: 0;
+    width: 100%;
+    fill: none;
+    stroke: #e32020; /* Color de la curva */
+}
+
+.curve path {
+    stroke-width: 2;
+}
+
+.letter .content {
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: 400px; /* Altura máxima para el scroll */
+}
+
+/* Estilos para la transición de apertura de la carta */
+.letter.open {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
